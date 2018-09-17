@@ -17,6 +17,19 @@ public class Cylinder extends Shape {
 	private float radius = (float) 0.0;
 	private float height = (float) 0.0;
 	private Component frame;
+	
+	
+	public Cylinder(float radius, float height) {
+		super();
+		this.radius = radius;
+		this.height = height;
+		
+		if(radius<0 || height<0) {
+			throw new IllegalArgumentException("Number must not be negative!");
+		
+		}
+	}
+
 
 	public float getRadius() {
 		return radius;
@@ -41,25 +54,31 @@ public class Cylinder extends Shape {
 	public Cylinder() {
 		// TODO Auto-generated constructor stub
 	}
-	//method to calculate surface area and volume
-public double calculateCylinder() {
-		
-		double saCylinder;
-		double vCylinder;
-		//surfaceArea() of a Cylinder A=2*pie*rh+2*pie*r2
-		//volume() of Cylinder aV=pie*r2h
-		saCylinder = (2*Math.PI*radius*height)+(2*Math.PI*Math.pow(radius, 2));
-		vCylinder = Math.PI*radius*2*height;
-		//dialog box displays surface area and volume of cylinder
-		JOptionPane.showMessageDialog(frame, "The surface area of a Cylinder is " + saCylinder + "\n" +"The volume of a Cylinder is " + vCylinder);
-		return 0;
-	}
 
 
 @Override
 public void render() {
-	// TODO Auto-generated method stub
 	
+	JOptionPane.showMessageDialog(frame, "The surface area of a Cylinder is " + surfaceArea() + "\n" +"The volume of a Cylinder is " + volume());
+	
+}
+
+
+@Override
+public float surfaceArea() {
+	
+	double saCylinder = (2*Math.PI*radius*height)+(2*Math.PI*Math.pow(radius, 2));
+	
+	return (float) saCylinder;
+}
+
+
+@Override
+public float volume() {
+	
+	double vCylinder = Math.PI*radius*radius*height;
+	
+	return (float) vCylinder;
 }
 
 }

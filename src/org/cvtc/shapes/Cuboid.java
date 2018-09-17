@@ -20,24 +20,27 @@ public class Cuboid extends Shape {
 	private Component frame;
 	
 	
-	public Cuboid() {
+	public Cuboid(float width, float height, float depth) {
 		super();
+		this.width = width;
+		this.height = height;
+		this.depth = depth;
+		
+		
+		if(width<0 || height<0 || depth<0) {
+			throw new IllegalArgumentException("Number must not be negative!");
+		
+		}
+
 	}
 	
-	//getters and setters
-	//not using at the moment
 	public float getWidth() {
 		return width;
 	}
 	public void setWidth(float width) {
 		this.width = width;
 	}
-	public Cuboid(float width, float height, float depth) {
-		super();
-		this.width = width;
-		this.height = height;
-		this.depth = depth;
-	}
+	
 	public float getHeight() {
 		return height;
 	}
@@ -51,29 +54,29 @@ public class Cuboid extends Shape {
 		this.depth = depth;
 	}
 	
-	//Method to calculate Cuboid surface area and volume 
-	public float calculateCuboid() {
-		
-		double saCuboid;
-		double vCuboid;
-		//formula for Cuboid surface area
-		//surfaceArea() of a Cuboid is SA=2dw+2dh+2hw
-		saCuboid = (2*depth*width)+(2*depth*height)+(2*height*width);
-		//formula for cuboid volume
-		//volume() of a Cuboid is w*h*d
-		vCuboid = width*height*depth;
-		
-		//dialog box displays surface area and volume of cuboid
-		JOptionPane.showMessageDialog(frame, "The surface area of a Cuboid is " + saCuboid + "\n" +"The volume of a Cuboid is " + vCuboid);
-		//jOptionPane frame makes me return something
-		return 0;
-	}
 
-	//need more skill here and understanding
+	
 	@Override
 	public void render() {
-		// TODO Auto-generated method stub
 		
+		JOptionPane.showMessageDialog(frame, "The surface area of a Cuboid is " + surfaceArea() + "\n" +"The volume of a Cuboid is " + volume());
+		
+	}
+
+	@Override
+	public float surfaceArea() {
+		
+		double saCuboid = (2*depth*width)+(2*depth*height)+(2*height*width);
+		
+		return (float) saCuboid;
+	}
+
+	@Override
+	public float volume() {
+		
+		float vCuboid = width*height*depth;
+		
+		return (float) vCuboid;
 	}
 	
 	
