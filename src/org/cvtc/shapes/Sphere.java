@@ -11,14 +11,16 @@ import javax.swing.JOptionPane;
  * @author Marcus
  *
  */
-public class Sphere extends Shape{
+
+//Should all the shapes extend Renderer interface instead of Shape???
+public class Sphere extends Shape implements Renderer{
 	
 	private float radius = (float) 0.0;
 	private Component frame;
 	
 
-	public Sphere(float radius) {
-		super();
+	public Sphere(Dialog messageBox,float radius) {
+		super(messageBox);
 		this.radius = radius;
 		
 		if(radius<0) {

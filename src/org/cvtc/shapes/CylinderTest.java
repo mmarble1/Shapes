@@ -10,26 +10,26 @@ public class CylinderTest {
 
 	@Test
 	public void testSurfaceArea() {
-		Cylinder cylinder1 = new Cylinder(8, 6);
+		Cylinder cylinder1 = new Cylinder(null, 8, 6);
 		//assertEquals(expected value, actual value,     )
 		assertEquals(703.72, cylinder1.surfaceArea(),.02);
 	}
 
 	@Test
 	public void testVolume() {
-		Cylinder cylinder = new Cylinder(4,4);
+		Cylinder cylinder = new Cylinder(null, 4,4);
 		assertEquals(201.06, cylinder.volume(),.02);
 	}
 
 	@Test
 	public void testGetRadius() {
-		Cylinder cylinder = new Cylinder(4,0);
+		Cylinder cylinder = new Cylinder(null, 4,0);
 		assertEquals(4, cylinder.getRadius());
 	}
 
 	@Test
 	public void testGetHeight() {
-		Cylinder cylinder = new Cylinder(0,10);
+		Cylinder cylinder = new Cylinder(null, 0,10);
 		assertEquals(10, cylinder.getHeight());
 	}
 	
@@ -40,7 +40,7 @@ public class CylinderTest {
 		
 		Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
 			
-				Cylinder cylinder1 = new Cylinder(-1, 1);
+				Cylinder cylinder1 = new Cylinder(null, -1, 1);
 				cylinder1.getRadius();
 			});
 			

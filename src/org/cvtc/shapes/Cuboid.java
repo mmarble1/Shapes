@@ -11,7 +11,9 @@ import javax.swing.JOptionPane;
  * @author Marcus
  *
  */
-public class Cuboid extends Shape {
+
+//Should all the shapes extend Renderer interface instead of Shape???
+public class Cuboid extends Shape implements Renderer {
 	
 	//float variables for cuboid
 	private float width = (float) 0.0; 
@@ -20,8 +22,8 @@ public class Cuboid extends Shape {
 	private Component frame;
 	
 	
-	public Cuboid(float width, float height, float depth) {
-		super();
+	public Cuboid(Dialog messageBox, float width, float height, float depth) {
+		super(messageBox);
 		this.width = width;
 		this.height = height;
 		this.depth = depth;

@@ -8,19 +8,19 @@ public class SphereTest {
 
 	@Test
 	public void testSurfaceArea() {
-		Sphere sphere1 = new Sphere(5);
+		Sphere sphere1 = new Sphere(null, 5);
 		assertEquals(314.1592, sphere1.surfaceArea(), .0002);
 	}
 	
 	@Test
 	public void testVolume() {
-		Sphere sphere1 = new Sphere(5);
+		Sphere sphere1 = new Sphere(null, 5);
 		assertEquals(523.6, sphere1.volume(), .002);
 	}
 	
 	@Test
 	public void testGetRadius() {
-		Sphere sphere1 = new Sphere((float) 5.25);
+		Sphere sphere1 = new Sphere(null, (float) 5.25);
 		assertEquals(5.25, sphere1.getRadius());
 	}	
 		
@@ -32,7 +32,7 @@ public class SphereTest {
 		
 		Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
 			
-				Sphere sphere1 = new Sphere(-1);
+				Sphere sphere1 = new Sphere(null, -1);
 				sphere1.getRadius();
 			});
 			

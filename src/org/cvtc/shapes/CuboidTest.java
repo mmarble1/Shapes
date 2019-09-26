@@ -9,26 +9,26 @@ class CuboidTest {
 
 	@Test
 	void testGetWidth() {
-		Cuboid cube1 = new Cuboid(1, 0, 0);
+		Cuboid cube1 = new Cuboid(null, 1, 0, 0);
 		assertEquals(1, cube1.getWidth());
 	}
 	
 	@Test
 	void testGetHeight() {
-		Cuboid cube1 = new Cuboid(0, 1, 0);
+		Cuboid cube1 = new Cuboid(null, 0, 1, 0);
 		assertEquals(1, cube1.getHeight());
 	}
 	
 	@Test
 	void testGetDepth() {
-		Cuboid cube1 = new Cuboid(0, 0, 1);
+		Cuboid cube1 = new Cuboid(null, 0, 0, 1);
 		assertEquals(1, cube1.getDepth());
 	}
 	
 	//??  if I put in a negative number here it will throw that exception in the constructor
 	@Test
 	void testCuboid() {
-		Cuboid cube1 = new Cuboid(4, 5, 1);
+		Cuboid cube1 = new Cuboid(null, 4, 5, 1);
 		assertEquals(true, cube1.equals(cube1));
 
 	}
@@ -38,7 +38,7 @@ class CuboidTest {
 	@Test 
 	public  void constructorExceptionTest() {
 		Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-			Cuboid cube1 = new Cuboid(1, 1, -1);
+			Cuboid cube1 = new Cuboid(null, 1, 1, -1);
 			cube1.getWidth();
 			cube1.getHeight();
 			cube1.getDepth();
@@ -52,14 +52,14 @@ class CuboidTest {
 	
 	@Test
 	public void testSurfaceArea() {
-		Cuboid cube1 = new Cuboid(3,3,3);
+		Cuboid cube1 = new Cuboid(null, 3,3,3);
 		//assertEquals(expected value, actual value,     )
 		assertEquals(54, cube1.surfaceArea(), .0002);	
 	}
 	
 	@Test
 	void testVolume() {
-		Cuboid cube1 = new Cuboid(3,3,3);
+		Cuboid cube1 = new Cuboid(null, 3,3,3);
 		assertEquals(27, cube1.volume(), .0002);
 	}
 

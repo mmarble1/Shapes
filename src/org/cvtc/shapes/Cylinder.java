@@ -7,20 +7,23 @@ import java.awt.Component;
 
 import javax.swing.JOptionPane;
 
+
 /**
  * @author Marcus
  *
  */
+
+//Should all the shapes extend Renderer interface instead of Shape???
 //a child of shape 
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Renderer{
 	
 	private float radius = (float) 0.0;
 	private float height = (float) 0.0;
 	private Component frame;
 	
 	
-	public Cylinder(float radius, float height) {
-		super();
+	public Cylinder(Dialog messageBox,float radius, float height) {
+		super(messageBox);
 		this.radius = radius;
 		this.height = height;
 		
@@ -51,9 +54,6 @@ public class Cylinder extends Shape {
 	}
 
 
-	public Cylinder() {
-		// TODO Auto-generated constructor stub
-	}
 
 
 @Override
